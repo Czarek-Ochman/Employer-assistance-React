@@ -1,0 +1,29 @@
+.company {
+  text-align: center;
+
+  .company-text {
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 33px;
+  }
+
+  .input-style {
+    margin-bottom: 16px;
+  }
+
+  button {
+    background-color: #2E3B55;
+    color: white;
+    padding: 10px;
+    max-width: 230px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  }
+
+  .error-company {
+    color: red;
+    margin-bottom: 15px;
+  }
+}

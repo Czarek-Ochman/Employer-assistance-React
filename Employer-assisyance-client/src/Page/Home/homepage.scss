@@ -1,0 +1,33 @@
+.homepage{
+  border-top: 1px solid white;
+  background-color: #2E3B55;
+  height: 100vh;
+
+  .main-text{
+    text-align: center;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    margin-bottom: 40px;
+    //font-family: 'monospace';
+  }
+
+  .img-style {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 21px;
+
+    .img {
+      width: 1300px;
+      height: 600px;
+    }
+  }
+  .home-footer{
+    justify-content: center;
+    vertical-align: center;
+    align-items: center;
+    justify-items: center;
+  }
+}

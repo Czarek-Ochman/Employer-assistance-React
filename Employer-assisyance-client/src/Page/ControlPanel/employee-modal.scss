@@ -1,0 +1,84 @@
+.modal {
+  .employee-box {
+    display: flex;
+    justify-content: center;
+
+    .employee-add-box {
+
+      .employee-text {
+        font-size: 28px;
+        margin-top: 20px;
+        margin-bottom: 33px;
+      }
+
+      .select-style {
+        min-width: 154px;
+      }
+
+      .employee-three-item {
+        display: flex;
+        flex-direction: row;
+
+        .employee-item {
+          padding: 8px;
+        }
+      }
+
+      .add {
+        .add-button {
+          margin-top: 20px;
+          background-color: #2E3B55;
+          color: white;
+          padding: 10px;
+          max-width: 700px;
+          width: 100%;
+          height: 50px;
+          border-radius: 10px;
+          margin-bottom: 36px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .modal-employee-days {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      margin-right: 10px;
+      margin-left: 8px;
+      margin-top: 20px;
+
+
+      .employee-days {
+        max-width: 180px;
+      }
+    }
+  }
+
+  .modal-switch {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+
+    .edit {
+      margin-right: 5px;
+
+      .edit-button {
+        background-color: #2E3B55;
+        color: white;
+        padding: 10px;
+        width: 200px;
+        height: 50px;
+        border-radius: 10px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        cursor: pointer;
+      }
+    }
+  }
+}
