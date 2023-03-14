@@ -76,7 +76,7 @@ const ApiService = {
         let token = localStorage.getItem("accessToken") || "";
         let decodedToken = jwt_decode<MyToken>(token);
         this.checkHeaderWithAuth()
-        return api.get(`/api/control-panel/company/user/` + decodedToken.id, {headers: config.headerWithAuth}).then(response => {
+        return api.get(`/api/control-panel/user/` + decodedToken.id, {headers: config.headerWithAuth}).then(response => {
             return response.data;
         }).then(data => {
             return data;
@@ -84,7 +84,7 @@ const ApiService = {
     },
 
     addEmployee(city: string, state: string, street: string, zipCode: string, employeeDepartment: string, age: any, firstName: string, lastName: string, salary: any) {
-        return api.post(`/api/control-panel/employee`, {
+        return api.post(`/api/control-panel/employees`, {
             "address": {
                 "city": city,
                 "state": state,
@@ -121,14 +121,14 @@ const ApiService = {
         let token = localStorage.getItem("accessToken") || "";
         let decodedToken = jwt_decode<MyToken>(token);
         this.checkHeaderWithAuth()
-        return api.get(`/api/control-panel/employee/company`, {headers: config.headerWithAuth}).then(response => {
+        return api.get(`/api/control-panel/employees/company`, {headers: config.headerWithAuth}).then(response => {
             return response;
         })
     },
 
     deleteEmployee(id: any) {
         this.checkHeaderWithAuth()
-        return api.delete(`/api/control-panel/employee/`+ id, {headers: config.headerWithAuth}).then(response => {
+        return api.delete(`/api/control-panel/employees/`+ id, {headers: config.headerWithAuth}).then(response => {
             return response.status === 200;
         });
     },
@@ -137,7 +137,7 @@ const ApiService = {
         let token = localStorage.getItem("accessToken") || "";
         let decodedToken = jwt_decode<MyToken>(token);
         this.checkHeaderWithAuth()
-        return api.get(`/api/control-panel/employee/`+ id, {headers: config.headerWithAuth}).then(response => {
+        return api.get(`/api/control-panel/employees/`+ id, {headers: config.headerWithAuth}).then(response => {
             return response;
         })
     },
@@ -145,7 +145,7 @@ const ApiService = {
     editEmployee(id: string,city: string, state: string, street: string, zipCode: string, employeeDepartment: string, age: any, firstName: string, lastName: string, salary: any,
                  ill: boolean, onVacation: boolean, sickDays: string, vacationDays: string, companyId: string,
     ) {
-        return api.put(`/api/control-panel/employee/edit`, {
+        return api.put(`/api/control-panel/employees/edit`, {
             "id": Number(id),
             "address": {
                 "city": city,
