@@ -25,12 +25,30 @@ interface Props {
     ageEmployee: string,
     sickDaysEmployee: string,
     vacationDaysEmployee: string
-    companyIdEmployee:string
+    companyIdEmployee: string
     handleButtonClick: () => void;
 }
 
-export const EmployeeEdit: FunctionComponent<Props> = ({isOpen, setIsOpen, firstNameEmployee, lastNameEmployee, departmentEmployee, salaryEmployee,
-                                                            idEmployee, illEmployee, onVacationEmployee,streetEmployee,cityEmployee,zipCodeEmployee,stateEmployee,ageEmployee,sickDaysEmployee, vacationDaysEmployee, companyIdEmployee, handleButtonClick}) => {
+export const EmployeeEdit: FunctionComponent<Props> = ({
+                                                           isOpen,
+                                                           setIsOpen,
+                                                           firstNameEmployee,
+                                                           lastNameEmployee,
+                                                           departmentEmployee,
+                                                           salaryEmployee,
+                                                           idEmployee,
+                                                           illEmployee,
+                                                           onVacationEmployee,
+                                                           streetEmployee,
+                                                           cityEmployee,
+                                                           zipCodeEmployee,
+                                                           stateEmployee,
+                                                           ageEmployee,
+                                                           sickDaysEmployee,
+                                                           vacationDaysEmployee,
+                                                           companyIdEmployee,
+                                                           handleButtonClick
+                                                       }) => {
     const [age, setAge] = React.useState(ageEmployee || '');
     const [street, setStreet] = useState(streetEmployee || '');
     const [city, setCity] = useState(cityEmployee || '');
@@ -42,7 +60,7 @@ export const EmployeeEdit: FunctionComponent<Props> = ({isOpen, setIsOpen, first
     const [lastName, setLastName] = React.useState(lastNameEmployee || '');
     const [isIll, setIsIll] = useState(illEmployee || false);
     const [isOnVacation, setIsOnVacation] = useState(onVacationEmployee || false);
-    const [sickDays, setSickDays] = React.useState( sickDaysEmployee || '');
+    const [sickDays, setSickDays] = React.useState(sickDaysEmployee || '');
     const [vacationDays, setVacationDays] = React.useState(vacationDaysEmployee || '');
     const [id, setId] = React.useState(idEmployee || '');
     const [companyId, setCompanyId] = React.useState(companyIdEmployee || '');
@@ -53,15 +71,15 @@ export const EmployeeEdit: FunctionComponent<Props> = ({isOpen, setIsOpen, first
 
     const editCompany = (e: any) => {
         e.preventDefault();
-            api.editEmployee(id,city, state, street, zipCode, department, age, firstName, lastName, salary, isIll, isOnVacation, sickDays, vacationDays, companyId).then(response => {
-                if (response.status === 200) {
-                    setIsOpen(false)
-                    handleButtonClick();
-                }
-            }).catch(err => {
-                console.log(err.message)
-            })
-        }
+        api.editEmployee(id, city, state, street, zipCode, department, age, firstName, lastName, salary, isIll, isOnVacation, sickDays, vacationDays, companyId).then(response => {
+            if (response.status === 200) {
+                setIsOpen(false)
+                handleButtonClick();
+            }
+        }).catch(err => {
+            console.log(err.message)
+        })
+    }
 
     React.useEffect(() => {
         setId(idEmployee);
@@ -78,7 +96,7 @@ export const EmployeeEdit: FunctionComponent<Props> = ({isOpen, setIsOpen, first
         setIsOnVacation(onVacationEmployee);
         setSickDays(sickDaysEmployee);
         setVacationDays(vacationDaysEmployee);
-    }, [idEmployee,ageEmployee, streetEmployee, cityEmployee, zipCodeEmployee, stateEmployee, departmentEmployee, salaryEmployee, firstNameEmployee, lastNameEmployee, illEmployee, onVacationEmployee, sickDaysEmployee, vacationDaysEmployee, companyIdEmployee]);
+    }, [idEmployee, ageEmployee, streetEmployee, cityEmployee, zipCodeEmployee, stateEmployee, departmentEmployee, salaryEmployee, firstNameEmployee, lastNameEmployee, illEmployee, onVacationEmployee, sickDaysEmployee, vacationDaysEmployee, companyIdEmployee]);
 
     return (
         <ReactModal isOpen={isOpen} style={{
@@ -168,8 +186,11 @@ export const EmployeeEdit: FunctionComponent<Props> = ({isOpen, setIsOpen, first
                                     </div>
                                 </div>
                                 <div className="modal-employee-days">
-                                    <div className={"employee-days"}><TextField id="standard-basic" label="Wykorzystane dni l4" type={"number"}
-                                                                                variant="outlined" defaultValue={sickDays}
+                                    <div className={"employee-days"}><TextField id="standard-basic"
+                                                                                label="Wykorzystane dni l4"
+                                                                                type={"number"}
+                                                                                variant="outlined"
+                                                                                defaultValue={sickDays}
                                                                                 onChange={(e) => setSickDays(e.target.value)}/>
                                     </div>
                                     <div><FormControlLabel
@@ -177,8 +198,11 @@ export const EmployeeEdit: FunctionComponent<Props> = ({isOpen, setIsOpen, first
                                         label="Oznacz L4"/></div>
                                 </div>
                                 <div className={"modal-employee-days"}>
-                                    <div className={"employee-days"}><TextField id="standard-basic" label="Wykorzystane dni urlopowe" type={"number"}
-                                                                                variant="outlined" defaultValue={vacationDays}
+                                    <div className={"employee-days"}><TextField id="standard-basic"
+                                                                                label="Wykorzystane dni urlopowe"
+                                                                                type={"number"}
+                                                                                variant="outlined"
+                                                                                defaultValue={vacationDays}
                                                                                 onChange={(e) => setVacationDays(e.target.value)}/>
                                     </div>
                                     <div><FormControlLabel control={<Switch checked={isOnVacation}
@@ -192,7 +216,8 @@ export const EmployeeEdit: FunctionComponent<Props> = ({isOpen, setIsOpen, first
                                 </div>
                                 <div className={"edit"}>
                                     <button className={"edit-button"}
-                                    onClick={editCompany}>Edytuj</button>
+                                            onClick={editCompany}>Edytuj
+                                    </button>
                                 </div>
                             </div>
                         </div>

@@ -37,7 +37,6 @@ export const Signup: FunctionComponent<Props> = (props: Props) => {
                     }
                 })
                 .catch(err => {
-                    // setIsWrongPassword(true);
                 })
         } else {
             setError(true)
@@ -48,24 +47,28 @@ export const Signup: FunctionComponent<Props> = (props: Props) => {
         <div className="signup-container">
             <div className="signup-box">
                 <form>
-                <div className="signup-text"> Rejestracja</div>
-                <div className="item">
-                    <TextField id="outlined-basic" label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)}/>
-                </div>
-                <div className="item">
-                    <TextField id="outlined-basic" label="Hasło" variant="outlined" type="password" onChange={(e) => setPassword(e.target.value)}/>
-                </div>
-                <div className="item">
-                    <TextField id="outlined-basic" label="Powtórz Hasło" variant="outlined" type="password" onChange={(e) => setRepeatPassword(e.target.value)}/>
-                </div>
+                    <div className="signup-text"> Rejestracja</div>
+                    <div className="item">
+                        <TextField id="outlined-basic" label="Email" variant="outlined"
+                                   onChange={(e) => setEmail(e.target.value)}/>
+                    </div>
+                    <div className="item">
+                        <TextField id="outlined-basic" label="Hasło" variant="outlined" type="password"
+                                   onChange={(e) => setPassword(e.target.value)}/>
+                    </div>
+                    <div className="item">
+                        <TextField id="outlined-basic" label="Powtórz Hasło" variant="outlined" type="password"
+                                   onChange={(e) => setRepeatPassword(e.target.value)}/>
+                    </div>
                     {error &&
-                    <div className={"errors"}>
-                    <Alert severity="error">Podane hasła są różne! <span className={"close-error"} onClick={setStatusError}>x</span></Alert>
-                    </div>}
-                <div>
-                    <button onClick={(e) => handleSubmit(e)}>Zarejestruj</button>
-                </div>
-            </form>
+                        <div className={"errors"}>
+                            <Alert severity="error">Podane hasła są różne! <span className={"close-error"}
+                                                                                 onClick={setStatusError}>x</span></Alert>
+                        </div>}
+                    <div>
+                        <button onClick={(e) => handleSubmit(e)}>Zarejestruj</button>
+                    </div>
+                </form>
                 <Button href={"/login"}>Logowanie</Button>
                 <Button href={"/"}>Wstecz</Button>
             </div>

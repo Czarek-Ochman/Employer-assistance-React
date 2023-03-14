@@ -1,6 +1,5 @@
 import {FunctionComponent} from 'react';
 import "./homepage.scss";
-import Workers from '../../Component/Shared/Assets/workers.jpeg';
 import {MainFooter} from "../../Component/MainFooter/MainFooter";
 import Employees from '../../Component/Shared/Assets/employees.jpg';
 

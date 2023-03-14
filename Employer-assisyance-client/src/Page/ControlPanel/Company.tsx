@@ -44,7 +44,6 @@ export const Company: FunctionComponent<Props> = (props: Props) => {
         }
     }
 
-
     useEffect(() => {
         const fetchData = async () => {
             const result = await api.isCompany();

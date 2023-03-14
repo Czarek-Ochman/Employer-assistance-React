@@ -46,6 +46,5 @@ export const Login: FunctionComponent<Props> = (props: Props) => {
                 <Button href={"/"}>Wstecz</Button>
             </div>
         </div>
-    )
-        ;
+    );
 };
